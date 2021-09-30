@@ -1,10 +1,11 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
+import Tiles from './components/Tiles/Tiles';
 
 function App() {
 
-  const [loadState, setLoadState] = useState ('False');
+  const [loadState, setLoadState] = useState(true);
   const [characterData, setCharacterData] = useState([]);
   const [xMenList, setXmenList] = useState([]);
   const [avengersList, setAvengersList] = useState([]);
@@ -23,12 +24,14 @@ function App() {
   };
 
   const sortTeam = (data, team) => {
-    let teamArray = [];
+    const teamArray = [];
+
     data.forEach(character => {
       if (character.connections.groupAffiliation.includes(team)) {
         teamArray.push(character);
       };
     });
+
     switch (team) {
       case 'X-Men':
         setXmenList(teamArray);
@@ -54,7 +57,7 @@ function App() {
   };
 
   useEffect(() => {
-    if (loadState === 'False') {
+    if (characterData.length === 0) {
       (async () => {
         try {
           const { data } = await axios.get(
@@ -62,17 +65,21 @@ function App() {
           );
           setCharacterData(data);
           generateRosters(data);
-          setLoadState('True');
+          setLoadState(false);
         } catch (err) {
           console.log(err);
         };
       })();
     };
-    console.log(characterData)
-  });
+  }, [characterData]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  if (loadState) {
+    return <div className="App">Loading...</div>;
+  };
 
   return (
     <div className="App">
+      <Tiles xMenList={xMenList}/>
     </div>
   );
 };
