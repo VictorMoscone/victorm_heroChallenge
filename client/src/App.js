@@ -3,6 +3,11 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Tiles from './components/Tiles/Tiles';
 import xmenImg from './images/xmen.png';
+import avengersImg from './images/avengers.png';
+import justiceleagueImg from './images/justiceleague.png';
+import suicidesquadImg from './images/suicidesquad.png';
+import teentitansImg from './images/teentitans.png';
+import guardiansImg from './images/guardians.png';
 
 function App() {
 
@@ -81,11 +86,11 @@ function App() {
   return (
     <div className="App">
       <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg}/>
-      <Tiles team='Avengers' rosterData={avengersList}/>
-      <Tiles team='Justice League' rosterData={justiceLeagueList}/>
-      <Tiles team='Suicide Squad' rosterData={sSquadList}/>
-      <Tiles team='Teen Titans' rosterData={teenTitansList}/>
-      <Tiles team='Guardians of the Galaxy' rosterData={guardiansList}/>
+      <Tiles team='Avengers' rosterData={avengersList} imgSrc={avengersImg}/>
+      <Tiles team='Justice League' rosterData={justiceLeagueList} imgSrc={justiceleagueImg}/>
+      <Tiles team='Suicide Squad' rosterData={sSquadList} imgSrc={suicidesquadImg}/>
+      <Tiles team='Teen Titans' rosterData={teenTitansList} imgSrc={teentitansImg}/>
+      <Tiles team='Guardians of the Galaxy' rosterData={guardiansList} imgSrc={guardiansImg}/>
     </div>
   );
 };
