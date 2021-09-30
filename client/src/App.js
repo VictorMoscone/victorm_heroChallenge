@@ -10,8 +10,8 @@ function App() {
   const [xMenList, setXmenList] = useState([]);
   const [avengersList, setAvengersList] = useState([]);
   const [justiceLeagueList, setJusticeLeagueList] = useState([]);
-  const [ssquadList, setSSquadList] = useState([]);
-  const [fantasticFourList, setFantasticFourList] = useState([]);
+  const [sSquadList, setSSquadList] = useState([]);
+  const [teenTitansList, setTeenTitansList] = useState([]);
   const [guardiansList, setGuardiansList] = useState([]);
 
   const generateRosters = (data) => {
@@ -19,7 +19,7 @@ function App() {
     sortTeam(data, 'Avengers');
     sortTeam(data, 'Justice League');
     sortTeam(data, 'Suicide Squad');
-    sortTeam(data, 'Fantastic Four');
+    sortTeam(data, 'Teen Titans');
     sortTeam(data, 'Guardians of the Galaxy');
   };
 
@@ -45,8 +45,8 @@ function App() {
       case 'Suicide Squad':
         setSSquadList(teamArray);
         break;
-      case 'Fantastic Four':
-        setFantasticFourList(teamArray);
+      case 'Teen Titans':
+        setTeenTitansList(teamArray);
         break;
       case 'Guardians of the Galaxy':
         setGuardiansList(teamArray);
@@ -79,7 +79,12 @@ function App() {
 
   return (
     <div className="App">
-      <Tiles xMenList={xMenList}/>
+      <Tiles team='X-Men' rosterData={xMenList}/>
+      <Tiles team='Avengers' rosterData={avengersList}/>
+      <Tiles team='Justice League' rosterData={justiceLeagueList}/>
+      <Tiles team='Suicide Squad' rosterData={sSquadList}/>
+      <Tiles team='Teen Titans' rosterData={teenTitansList}/>
+      <Tiles team='Guardians of the Galaxy' rosterData={guardiansList}/>
     </div>
   );
 };
