@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Tiles from './components/Tiles/Tiles';
+import xmenImg from './images/xmen.png';
 
 function App() {
 
@@ -79,7 +80,7 @@ function App() {
 
   return (
     <div className="App">
-      <Tiles team='X-Men' rosterData={xMenList}/>
+      <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg}/>
       <Tiles team='Avengers' rosterData={avengersList}/>
       <Tiles team='Justice League' rosterData={justiceLeagueList}/>
       <Tiles team='Suicide Squad' rosterData={sSquadList}/>

@@ -1,11 +1,11 @@
 import React from 'react';
-import xmenImg from '../../images/xmen.png';
+import './Tiles.css';
 
 const Tiles = (props) => {
 
     return (
         <div>
-            {props.team}
+            <img src={props.imgSrc} alt={props.team} className='Tile'/>
         </div>
     );
 };
