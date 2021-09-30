@@ -4,22 +4,45 @@ import './App.css';
 
 function App() {
 
-  const [characterData, setCharacterData] = useState('')
+  const [loadState, setLoadState] = useState ('False');
+  // const [characterData, setCharacterData] = useState([]);
+  const [xMenList, setXmenList] = useState([]);
+
+  const generateRosters = (data) => {
+    sortTeam(data, 'X-Men');
+  };
+
+  const sortTeam = (data, team) => {
+    let teamArray = [];
+    data.forEach(character => {
+      if (character.connections.groupAffiliation.includes(team)) {
+        teamArray.push(character);
+      };
+    });
+    switch (team) {
+      case 'X-Men':
+        setXmenList(teamArray)
+        break;
+      default:
+        break;
+    };
+  };
 
   useEffect(() => {
-    if (characterData === '') {
+    if (loadState === 'False') {
       (async () => {
         try {
           const { data } = await axios.get(
             `https://akabab.github.io/superhero-api/api/all.json`,
           );
-          setCharacterData(data);
+          // setCharacterData(data);
+          generateRosters(data);
+          setLoadState('True');
         } catch (err) {
           console.log(err);
         };
       })();
     };
-    console.log(characterData);
   });
 
   return (
