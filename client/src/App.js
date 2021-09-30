@@ -5,11 +5,21 @@ import './App.css';
 function App() {
 
   const [loadState, setLoadState] = useState ('False');
-  // const [characterData, setCharacterData] = useState([]);
+  const [characterData, setCharacterData] = useState([]);
   const [xMenList, setXmenList] = useState([]);
+  const [avengersList, setAvengersList] = useState([]);
+  const [justiceLeagueList, setJusticeLeagueList] = useState([]);
+  const [ssquadList, setSSquadList] = useState([]);
+  const [fantasticFourList, setFantasticFourList] = useState([]);
+  const [guardiansList, setGuardiansList] = useState([]);
 
   const generateRosters = (data) => {
     sortTeam(data, 'X-Men');
+    sortTeam(data, 'Avengers');
+    sortTeam(data, 'Justice League');
+    sortTeam(data, 'Suicide Squad');
+    sortTeam(data, 'Fantastic Four');
+    sortTeam(data, 'Guardians of the Galaxy');
   };
 
   const sortTeam = (data, team) => {
@@ -21,7 +31,22 @@ function App() {
     });
     switch (team) {
       case 'X-Men':
-        setXmenList(teamArray)
+        setXmenList(teamArray);
+        break;
+      case 'Avengers':
+        setAvengersList(teamArray);
+        break;
+      case 'Justice League':
+        setJusticeLeagueList(teamArray);
+        break;
+      case 'Suicide Squad':
+        setSSquadList(teamArray);
+        break;
+      case 'Fantastic Four':
+        setFantasticFourList(teamArray);
+        break;
+      case 'Guardians of the Galaxy':
+        setGuardiansList(teamArray);
         break;
       default:
         break;
@@ -35,7 +60,7 @@ function App() {
           const { data } = await axios.get(
             `https://akabab.github.io/superhero-api/api/all.json`,
           );
-          // setCharacterData(data);
+          setCharacterData(data);
           generateRosters(data);
           setLoadState('True');
         } catch (err) {
@@ -43,6 +68,7 @@ function App() {
         };
       })();
     };
+    console.log(characterData)
   });
 
   return (
