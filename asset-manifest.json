@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/victorm_heroChallenge/static/css/main.d755c725.chunk.css",
+    "main.js": "/victorm_heroChallenge/static/js/main.cca3ff84.chunk.js",
+    "main.js.map": "/victorm_heroChallenge/static/js/main.cca3ff84.chunk.js.map",
+    "runtime-main.js": "/victorm_heroChallenge/static/js/runtime-main.61d3706b.js",
+    "runtime-main.js.map": "/victorm_heroChallenge/static/js/runtime-main.61d3706b.js.map",
+    "static/js/2.bb81d4ff.chunk.js": "/victorm_heroChallenge/static/js/2.bb81d4ff.chunk.js",
+    "static/js/2.bb81d4ff.chunk.js.map": "/victorm_heroChallenge/static/js/2.bb81d4ff.chunk.js.map",
+    "static/js/3.f830b3b5.chunk.js": "/victorm_heroChallenge/static/js/3.f830b3b5.chunk.js",
+    "static/js/3.f830b3b5.chunk.js.map": "/victorm_heroChallenge/static/js/3.f830b3b5.chunk.js.map",
+    "index.html": "/victorm_heroChallenge/index.html",
+    "static/css/main.d755c725.chunk.css.map": "/victorm_heroChallenge/static/css/main.d755c725.chunk.css.map",
+    "static/js/2.bb81d4ff.chunk.js.LICENSE.txt": "/victorm_heroChallenge/static/js/2.bb81d4ff.chunk.js.LICENSE.txt",
+    "static/media/avengers.4581aae3.png": "/victorm_heroChallenge/static/media/avengers.4581aae3.png",
+    "static/media/guardians.bdbb3e0a.png": "/victorm_heroChallenge/static/media/guardians.bdbb3e0a.png",
+    "static/media/justiceleague.cb0b3a64.png": "/victorm_heroChallenge/static/media/justiceleague.cb0b3a64.png",
+    "static/media/suicidesquad.d73ee52e.png": "/victorm_heroChallenge/static/media/suicidesquad.d73ee52e.png",
+    "static/media/teentitans.2c18560d.png": "/victorm_heroChallenge/static/media/teentitans.2c18560d.png",
+    "static/media/xmen.54981feb.png": "/victorm_heroChallenge/static/media/xmen.54981feb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.61d3706b.js",
+    "static/js/2.bb81d4ff.chunk.js",
+    "static/css/main.d755c725.chunk.css",
+    "static/js/main.cca3ff84.chunk.js"
+  ]
+}
