@@ -3,10 +3,12 @@ import './CharSheet.css';
 
 const CharSheet = (props) => {
 
+    // This is just to save some bits of code.
     let statSquish = props.chosenCharacter.powerstats;
 
     let totalStats = 0;
 
+    // We add all of the stats of the character together.
     let statCalc = () => {
         totalStats = statSquish.intelligence + statSquish.strength + statSquish.speed + statSquish.durability + statSquish.power + statSquish.combat;
     };

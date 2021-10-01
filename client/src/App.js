@@ -24,6 +24,7 @@ function App() {
   const [chosenTeam, setChosenTeam] = useState('Not Selected');
   const [chosenCharacter, setChosenCharacter] = useState ('Not Selected');
 
+  // Will save states for each team.
   const generateRosters = (data) => {
     sortTeam(data, 'X-Men');
     sortTeam(data, 'Avengers');
@@ -36,12 +37,15 @@ function App() {
   const sortTeam = (data, team) => {
     const teamArray = [];
 
+    // For each API entry, we check their affiliations...
     data.forEach(character => {
       if (character.connections.groupAffiliation.includes(team)) {
+        // If the affiliation has the team name we're looking for, it's added to an array.
         teamArray.push(character);
       };
     });
 
+    // Depending on which team we want, we set it as a state.
     switch (team) {
       case 'X-Men':
         setXmenList(teamArray);
@@ -67,12 +71,14 @@ function App() {
   };
 
   useEffect(() => {
+    // on component load, if we haven't gotten the data before, we will now!
     if (characterData.length === 0) {
       (async () => {
         try {
           const { data } = await axios.get(
             `https://akabab.github.io/superhero-api/api/all.json`,
           );
+          // This will generate the rosters, and let our load state know that it's done loading.
           setCharacterData(data);
           generateRosters(data);
           setLoadState(false);
@@ -83,10 +89,12 @@ function App() {
     };
   }, [characterData]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // If the app is still loading, it will display a loading message.
   if (loadState) {
     return <div className="App">Loading...</div>;
   };
 
+  // Depending on the Team or Character states; the app will render three different sets of components.
   if (chosenTeam === 'Not Selected') {
     return <div className="AppGrid">
       <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>

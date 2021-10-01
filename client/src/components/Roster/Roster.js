@@ -5,6 +5,7 @@ const Roster = (props) => {
 
     const [teamMap, setTeamMap] = useState();
 
+    // On component load, we map each provided character on the team with a button.
     useEffect(() => {
         if (props.chosenTeam !== 'Not Selected') {
             setTeamMap(props.chosenTeam.map( 
