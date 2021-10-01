@@ -10,7 +10,7 @@ const Roster = (props) => {
             setTeamMap(props.chosenTeam.map( 
                 (character) =>
                   {
-                    return <p key={character.id}>{character.name}</p>;
+                    return <button type="button" key={character.id}>{character.name}</button>;
                   }
                 )); 
         }

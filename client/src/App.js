@@ -86,7 +86,7 @@ function App() {
   };
 
   if (chosenTeam === 'Not Selected') {
-    return <div className="App">
+    return <div className="AppGrid">
       <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
       <Tiles team='Avengers' rosterData={avengersList} imgSrc={avengersImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
       <Tiles team='Justice League' rosterData={justiceLeagueList} imgSrc={justiceleagueImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
@@ -95,9 +95,10 @@ function App() {
       <Tiles team='Guardians of the Galaxy' rosterData={guardiansList} imgSrc={guardiansImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
       <Roster chosenTeam={chosenTeam} />
     </div>;
-  } else {
+  } else if (chosenTeam !== 'Not Selected') {
     return <div className="App">
-      <Roster chosenTeam={chosenTeam} />
+      <button type="button" onClick={() => setChosenTeam('Not Selected')}>Go Back</button>
+      <Roster chosenTeam={chosenTeam}/>
     </div>
   };
 };
