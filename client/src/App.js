@@ -97,7 +97,7 @@ function App() {
     </div>;
   } else if (chosenTeam !== 'Not Selected') {
     return <div className="App">
-      <button type="button" onClick={() => setChosenTeam('Not Selected')}>Go Back</button>
+      <button id="backButton" type="button" onClick={() => setChosenTeam('Not Selected')}>Go Back</button>
       <Roster chosenTeam={chosenTeam}/>
     </div>
   };
