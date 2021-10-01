@@ -9,23 +9,33 @@
     padding-right: 20vw;
     padding-top: 2vw;
   }
+
+  .App {
+    text-align: center;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 2vw;
+  }
 }
 
-.AppGrid {
-  text-align: center;
-  display: grid;
-  grid-gap: 15px;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  padding-left: 10vw;
-  padding-right: 10vw;
-  padding-top: 2vw;
-}
+@media only screen and (max-width: 767px) {
+  /* For Mobile */
+  .AppGrid {
+    text-align: center;
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 2vw;
+  }
 
-.App {
-  text-align: center;
-  padding-left: 20vw;
-  padding-right: 20vw;
-  padding-top: 2vw;
+  .App {
+    text-align: center;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    padding-top: 2vw;
+  }
 }
 
 /* Bounce styling courtesy of fdossena.com */
