@@ -27,7 +27,7 @@
 }
 
 #backButton{
-  animation: bouncy 5s infinite linear;
+  animation: bouncy 10s infinite linear;
   position: relative;
   background-color: #f44336;
   border-radius: 25px;
