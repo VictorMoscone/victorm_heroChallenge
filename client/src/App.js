@@ -9,6 +9,7 @@ import justiceleagueImg from './images/justiceleague.png';
 import suicidesquadImg from './images/suicidesquad.png';
 import teentitansImg from './images/teentitans.png';
 import guardiansImg from './images/guardians.png';
+import CharSheet from './components/CharSheet/CharSheet';
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
   const [teenTitansList, setTeenTitansList] = useState([]);
   const [guardiansList, setGuardiansList] = useState([]);
   const [chosenTeam, setChosenTeam] = useState('Not Selected');
+  const [chosenCharacter, setChosenCharacter] = useState ('Not Selected');
 
   const generateRosters = (data) => {
     sortTeam(data, 'X-Men');
@@ -95,10 +97,15 @@ function App() {
       <Tiles team='Guardians of the Galaxy' rosterData={guardiansList} imgSrc={guardiansImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
       <Roster chosenTeam={chosenTeam} />
     </div>;
-  } else if (chosenTeam !== 'Not Selected') {
+  } else if (chosenTeam !== 'Not Selected' && chosenCharacter === 'Not Selected') {
     return <div className="App">
       <button id="backButton" type="button" onClick={() => setChosenTeam('Not Selected')}>Go Back</button>
-      <Roster chosenTeam={chosenTeam}/>
+      <Roster chosenTeam={chosenTeam} setChosenCharacter={setChosenCharacter}/>
+    </div>
+  } else if (chosenCharacter !== 'Not Selected') {
+    return <div className="App">
+      <button id="backButton" type="button" onClick={() => setChosenCharacter('Not Selected')}>Go Back</button>
+      <CharSheet chosenCharacter={chosenCharacter}/>
     </div>
   };
 };
