@@ -1,5 +1,12 @@
-.item1 { grid-area: header; }
-.item2 { grid-area: image; }
+.item1 { 
+    border-bottom: 0.1em solid #000000;
+    padding-bottom: 0.4em;
+    grid-area: header; 
+}
+.item2 { 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    grid-area: image; 
+}
 .item3 { grid-area: stat; }
 .item4 { grid-area: stat2; }
 .item5 { grid-area: stat3; }
@@ -12,6 +19,7 @@
 .item12 { grid-area: number4; }
 .item13 { grid-area: number5; }
 .item14 { grid-area: number6; }
+.item15 { grid-area: total; }
 
 .grid-container {
     display: grid;
@@ -22,7 +30,8 @@
       'image stat3 number3'
       'image stat4 number4'
       'image stat5 number5'
-      'image stat6 number6';
+      'image stat6 number6'
+      'image total total';
     grid-gap: 10px;
     border: 0.1em solid #000000;
     border-radius: 0.24em;
