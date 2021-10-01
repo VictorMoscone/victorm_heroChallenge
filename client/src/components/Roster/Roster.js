@@ -10,10 +10,10 @@ const Roster = (props) => {
             setTeamMap(props.chosenTeam.map( 
                 (character) =>
                   {
-                    return <button type="button" key={character.id}>{character.name}</button>;
+                    return <button className="charButton" type="button" key={character.id} onClick={() => alert(character.name)}>{character.name}</button>;
                   }
                 )); 
-        }
+        };
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [props.chosenTeam]);
 
