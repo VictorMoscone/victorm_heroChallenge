@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import './App.css';
 import Tiles from './components/Tiles/Tiles';
+import Roster from './components/Roster/Roster';
 import xmenImg from './images/xmen.png';
 import avengersImg from './images/avengers.png';
 import justiceleagueImg from './images/justiceleague.png';
@@ -19,6 +20,7 @@ function App() {
   const [sSquadList, setSSquadList] = useState([]);
   const [teenTitansList, setTeenTitansList] = useState([]);
   const [guardiansList, setGuardiansList] = useState([]);
+  const [chosenTeam, setChosenTeam] = useState('Not Selected');
 
   const generateRosters = (data) => {
     sortTeam(data, 'X-Men');
@@ -83,16 +85,21 @@ function App() {
     return <div className="App">Loading...</div>;
   };
 
-  return (
-    <div className="App">
-      <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg}/>
-      <Tiles team='Avengers' rosterData={avengersList} imgSrc={avengersImg}/>
-      <Tiles team='Justice League' rosterData={justiceLeagueList} imgSrc={justiceleagueImg}/>
-      <Tiles team='Suicide Squad' rosterData={sSquadList} imgSrc={suicidesquadImg}/>
-      <Tiles team='Teen Titans' rosterData={teenTitansList} imgSrc={teentitansImg}/>
-      <Tiles team='Guardians of the Galaxy' rosterData={guardiansList} imgSrc={guardiansImg}/>
+  if (chosenTeam === 'Not Selected') {
+    return <div className="App">
+      <Tiles team='X-Men' rosterData={xMenList} imgSrc={xmenImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Tiles team='Avengers' rosterData={avengersList} imgSrc={avengersImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Tiles team='Justice League' rosterData={justiceLeagueList} imgSrc={justiceleagueImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Tiles team='Suicide Squad' rosterData={sSquadList} imgSrc={suicidesquadImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Tiles team='Teen Titans' rosterData={teenTitansList} imgSrc={teentitansImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Tiles team='Guardians of the Galaxy' rosterData={guardiansList} imgSrc={guardiansImg} chosenTeam={chosenTeam} setChosenTeam={setChosenTeam}/>
+      <Roster chosenTeam={chosenTeam} />
+    </div>;
+  } else {
+    return <div className="App">
+      <Roster chosenTeam={chosenTeam} />
     </div>
-  );
+  };
 };
 
 export default App;
