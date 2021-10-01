@@ -21,6 +21,27 @@
 .item14 { grid-area: number6; }
 .item15 { grid-area: total; }
 
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .grid-container {
+        display: grid;
+        grid-template-areas:
+          'header header header'
+          'image stat number'
+          'image stat2 number2'
+          'image stat3 number3'
+          'image stat4 number4'
+          'image stat5 number5'
+          'image stat6 number6'
+          'image total total';
+        grid-gap: 10px;
+        border: 0.1em solid #000000;
+        border-radius: 0.24em;
+        padding: 10px;
+        margin-top: 40px;
+    }
+}
+
 .grid-container {
     display: grid;
     grid-template-areas:
@@ -32,7 +53,7 @@
       'image stat5 number5'
       'image stat6 number6'
       'image total total';
-    grid-gap: 10px;
+    grid-gap: 5px;
     border: 0.1em solid #000000;
     border-radius: 0.24em;
     padding: 10px;
