@@ -30,7 +30,9 @@
 * Primary Usage: Viewing the rosters of 6 available groups and viewing the ability statistics of the characters within them.
 * Seen below -
 
-Screenshots pending.
+![hero_1](https://user-images.githubusercontent.com/70674522/135598608-855fa7ed-3c88-47ee-b41f-9d411571109f.PNG)
+![hero_2](https://user-images.githubusercontent.com/70674522/135598617-9aa7299e-6236-43ab-8d0b-1c9ecd64ab20.PNG)
+![hero_3](https://user-images.githubusercontent.com/70674522/135598619-1e6988cd-168a-48dd-9313-dbad394f722d.PNG)
 
 
 ### **Contributing**
